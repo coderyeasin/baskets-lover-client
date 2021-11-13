@@ -105,7 +105,7 @@ const useFirebase = () => {
     ///////////////////////// Admin ////////////////////
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${users?.email}`)
+        fetch(`https://arcane-peak-16137.herokuapp.com/orders/${users?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     },[users.email])
@@ -124,7 +124,7 @@ const useFirebase = () => {
 /////////////////// Save User Data to DB ///////////////
     const saveUser = (email, displayName, method) => {
         const order = { email, displayName };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://arcane-peak-16137.herokuapp.com/orders', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(order)

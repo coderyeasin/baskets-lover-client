@@ -11,7 +11,7 @@ const UserReview = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {    
-        fetch('http://localhost:5000/orders', {
+        fetch('https://arcane-peak-16137.herokuapp.com/orders', {
             method: 'POST',
             headers:{ 'content-type' : 'application/json' },
             body: JSON.stringify(data)

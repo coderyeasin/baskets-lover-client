@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders/admin', {
+        fetch('https://arcane-peak-16137.herokuapp.com/orders/admin', {
             method: 'PUT',
             headers:{ 'content-type' : 'application/json' },
             body: JSON.stringify(data)

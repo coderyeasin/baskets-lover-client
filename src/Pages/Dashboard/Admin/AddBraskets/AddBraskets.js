@@ -9,7 +9,7 @@ const AddBraskets = () => {
 
     const { register, reset, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/items', {
+        fetch('https://arcane-peak-16137.herokuapp.com/items', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

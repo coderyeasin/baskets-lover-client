@@ -9,7 +9,7 @@ const ManagelAllOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/allorders?email=${users?.email}`
+        const url = `https://arcane-peak-16137.herokuapp.com/allorders?email=${users?.email}`
         fetch(url)
             .then(res => res.json())
         .then(data => setOrders(data))

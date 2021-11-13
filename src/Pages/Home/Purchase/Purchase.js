@@ -19,7 +19,7 @@ const Purchase = () => {
     const history = useHistory()
     
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://arcane-peak-16137.herokuapp.com/items')
             .then(res => res.json())
         .then(data => setOrder(data))
     }, [])
@@ -35,7 +35,7 @@ const Purchase = () => {
 //react-hook
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://arcane-peak-16137.herokuapp.com/orders', {
             method: 'POST',
             headers:{ 'content-type' : 'application/json' },
             body: JSON.stringify(data)

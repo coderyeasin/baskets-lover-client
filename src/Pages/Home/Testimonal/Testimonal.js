@@ -8,7 +8,7 @@ const Testimonal = () => {
     const [review, setReview] = useState([])
   
     useEffect(() => {
-        const url = `http://localhost:5000/orders`
+        const url = `https://arcane-peak-16137.herokuapp.com/orders`
         fetch(url)
             .then(res => res.json())
         .then(data => setReview(data))

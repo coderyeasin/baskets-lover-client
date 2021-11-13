@@ -8,7 +8,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${users?.email}`
+        const url = `https://arcane-peak-16137.herokuapp.com/orders?email=${users?.email}`
         fetch(url)
             .then(res => res.json())
         .then(data => setOrders(data))
@@ -17,7 +17,7 @@ const MyOrder = () => {
     const handleOrder = id => {
         const process = window.confirm('Are you sure?')
         if (process) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://arcane-peak-16137.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
