@@ -1,0 +1,31 @@
+.cover{
+    background-image: linear-gradient(90deg, #79593f2f, #a17154, #fdf2ec), url("../../../images/bg-cycle.jpg") ;
+    background-color: #cccccc; 
+    height: auto; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    padding-top: 100px; 
+  }
+
+  /* rectangle should be-- 90, 120, 160, 180--- depend content */
+
+  .carousel-indicators { display: none; }
+  .carousel-control-prev{display: none;}
+  .carousel-control-next{display: none;}
+
+  .fancy_cards img{
+    background: #fdf2ec;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+  }
+.fancy_cards:hover img{
+  
+  transform: scale(0.1);
+}
+
+.bask_btn{
+  color: whitesmoke;
+ background: linear-gradient(120deg, #ac5723, #79593f);
+
+}

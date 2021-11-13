@@ -1,0 +1,26 @@
+/* .navbar.active{
+    background-color: linear-gradient(90deg, red, orange);
+}
+.navbar .fixed-top {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+  /* } */
+/*   fade --- fdf2ec
+//mid---- a17154
+//dark --- 79593f  */
+
+
+.menu, #navbarScrollingDropdown{
+    color: #fdf2ec;
+    background: linear-gradient(120deg, #ac5723, #79593f);
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.menu:hover{
+    color: #79593f;
+    background: #fdf2ec;
+}
