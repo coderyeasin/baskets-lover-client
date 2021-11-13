@@ -41,7 +41,7 @@ const MakeAdmin = () => {
                 
                 <input className="mb-3" type="email" placeholder="Email" {...register("email", { required: true })} /> <br />
 
-                <input className="my-3" type="submit" value="MakeAdmin" className="btn btn-success" />
+                <input className="bask_btn border-0 p-2 rounded my-3" type="submit" value="MakeAdmin" />
             </form>
         </div>
     );

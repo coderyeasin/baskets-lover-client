@@ -1,6 +1,6 @@
 # Basket Lover
 
-So many people like Baskets, Especially who're looking for jute Baskets. We're selling only jute Baskets. anyone want to carry something OR wanna make beautiful  home with ur ideas can do it simply, Baskets makes life so easy.
+Environmental Friendly Baskets, So many people like Baskets, Especially who're looking for jute Baskets. We're selling only jute Baskets. anyone want to carry something OR wanna make beautiful  home with ur ideas can do it simply, Baskets makes life so easy.
 
 ## Live Link: https://baskets-lover.web.app/
 

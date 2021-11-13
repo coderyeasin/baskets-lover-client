@@ -40,10 +40,9 @@ const Header = () => {
                         className="ms-auto my-2 my-lg-0"
                         navbarScroll
                         >
-                        <HashLink className="text-decoration-none menu" to="/home/#path">Home</HashLink>
+                        <HashLink className="text-decoration-none menu" to="/home/#home">Home</HashLink>
                         <HashLink className="text-decoration-none menu" to="/explore">Explore</HashLink>
-                        <HashLink className="text-decoration-none menu" to="/home/#path">Review</HashLink>
-                        <HashLink className="text-decoration-none menu" to="/home/#path">Blog</HashLink>
+                        <HashLink className="text-decoration-none menu" to="/home/#review">Review</HashLink>
                         {users?.email && <HashLink to="/dashboard" className="text-decoration-none menu">{users?.displayName}</HashLink>}
                       
                         </Nav>

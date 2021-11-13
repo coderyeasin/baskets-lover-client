@@ -18,10 +18,6 @@ import UserReview from './Pages/Dashboard/User/UserReview/UserReview';
 import Testimonal from './Pages/Home/Testimonal/Testimonal';
 import Explore from './Pages/Home/Explore/Explore';
 
-// fade --- fdf2ec
-//mid---- a17154
-//dark --- 79593f
-
 function App() {
   return (
     <div className="App">

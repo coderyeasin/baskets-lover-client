@@ -134,13 +134,9 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                         <Accordion.Item eventKey="1">
                             <Accordion.Header>Makes Beautiful Life</Accordion.Header>
                             <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                            est laborum.
+                                    <p>
+                                    Basket makers use a wide variety of materials to create a basket, such as bark, willow rods, leaves, wire, plastic, paper, and rope. There are three basic kinds of baskets—coiled, twined, or woven. A woven basket is made of spokes and weavers: the spokes run up and down and the weavers go over and under the spokes. A coiled basket is made by sewing rings of a fibrous material to the previous ring. Twined baskets have flexible weavers that are twined around the spokes in a variety of patterns.
+                                </p>
                             </Accordion.Body>
                         </Accordion.Item>
                         </Accordion>                                             

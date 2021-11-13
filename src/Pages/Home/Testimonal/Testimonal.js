@@ -17,7 +17,7 @@ const Testimonal = () => {
     const feedbacks = review.filter(user => user?.star && user?.review)
     
     return (
-        <div>
+        <div id="review">
             <h3 className="mt-5 pt-5 text-uppercase" style={{color:'#a17154'}}> Testimonials  </h3>
             <p className="text center">See how many clients loves and their satisfaction share with us.</p>
             <Container className="m3-5 py-5">

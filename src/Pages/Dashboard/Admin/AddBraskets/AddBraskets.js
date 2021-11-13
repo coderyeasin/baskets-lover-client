@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Row } from 'react-bootstrap';
-import InputGroup from 'react-bootstrap/InputGroup'
+import {  Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import basket from '../../../../images/hold.jpg'
 
@@ -25,7 +24,6 @@ const AddBraskets = () => {
                     reset()
                 }
         })
-        // console.log(data)
     };
     
 
@@ -33,19 +31,20 @@ const AddBraskets = () => {
         <Container>
             <Row>
                 <div className="col-md-6 my-5">
-                    <h3>React hook form</h3>
+                    <h3>Please Add a new Product</h3>
                 
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="mb-2" placeholder="product name" {...register("name", { required: true })} /> <br />
                     <input className="mb-2" placeholder="description" {...register("description" )} /> <br />
                     <input className="mb-2" placeholder="price" type="number" {...register("price" )} /> <br />
-                    <input className="mb-2" placeholder="image" type="text" {...register("image" )} /> <br />
-                    <input type="submit" value="Add Product" />
+                        <input className="mb-2" placeholder="image" type="text" {...register("image")} /> <br />
+                        
+                    <input className="bask_btn border-0 p-2 rounded" type="submit" value="Add Product" />
                     </form>
                 </div>
 
                 <div className="col-md-6">
-                        <img className="img-fluid" src={basket} alt="" />
+                        <img className="img-fluid " src={basket} alt="" />
                 </div>
             </Row>
       </Container>

@@ -14,7 +14,7 @@ import Rotate from 'react-reveal/Rotate';
 const Banner = () => {
 
     return (
-        <div className="cover">
+        <div className="cover" id="home">
             
             <Container className="py-5">
                 <Row className="align-items-center mb-5">

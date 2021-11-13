@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Container, Row } from 'react-bootstrap';
+import Rotate from 'react-reveal/Rotate';
 
 const Advantages = () => {
     return (
@@ -8,6 +9,7 @@ const Advantages = () => {
                 <h3 className="text-center fs-1 mb-3 text-uppercase" style={{color:'#a17154'}}>Bask Advantages </h3>
                 <Row className="align-items-center">
                     <div className="col-md-7">
+                    <Rotate top left>
                     <Card className="mb-3 border-0 shadow text-light" style={{ borderRadius:'20px', background:'#a17154' }}>
                     
                         <Card.Body>
@@ -27,8 +29,10 @@ const Advantages = () => {
                             </Card.Text>
                         </Card.Body>
                         </Card>
+                        </Rotate>
                     </div>
                     <div className="col-md-5">
+                    <Rotate top right>
                         <Card className="mb-3 border-0 shadow text-light" style={{ borderRadius:'20px', background:'#a17154' }}>
                         
                         <Card.Body>
@@ -46,6 +50,7 @@ const Advantages = () => {
                             </Card.Text>
                         </Card.Body>
                         </Card>
+                        </Rotate>
                     </div>
                 </Row>
             </Container>
