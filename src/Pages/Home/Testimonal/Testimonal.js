@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
-import useAuth from '../../../Hooks/useAuth';
+import { FaComment } from 'react-icons/fa';
 
 const Testimonal = () => {
 
@@ -18,8 +18,8 @@ const Testimonal = () => {
     
     return (
         <div id="review">
-            <h3 className="mt-5 pt-5 text-uppercase" style={{color:'#a17154'}}> Testimonials  </h3>
-            <p className="text center">See how many clients loves and their satisfaction share with us.</p>
+            <h3 className="mt-5 pt-5 text-uppercase" style={{color:'#a17154'}}> <FaComment />  Testimonials  </h3>
+            <p className="text center">See how many client loves and their satisfaction share with us.</p>
             <Container className="m3-5 py-5">
                 <Row>
                 {
@@ -30,7 +30,8 @@ const Testimonal = () => {
                                     <Rating
                                     initialRating={order?.star}
                                     emptySymbol="far fa-star"
-                                    fullSymbol="fas fa-star" className="text-warning"
+                                        fullSymbol="fas fa-star" className="text-warning"
+                                        readonly
                                     >
                                      </Rating>
 

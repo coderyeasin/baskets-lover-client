@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     useRouteMatch
@@ -17,40 +16,75 @@ import MyOrder from '../User/MyOrder/MyOrder';
 import Payment from '../User/Payment/Payment';
 import UserReview from '../User/UserReview/UserReview';
 import AdminRoute from '../../Home/Login/AdminRoute/AdminRoute';
+import { FaList, FaRegEdit, FaDollarSign, FaUserAlt, FaUserSecret, FaRegSun, FaRegCalendarPlus, FaRegCalendarAlt, FaWindowRestore, FaSignOutAlt } from 'react-icons/fa';
+
 
 const Dashboard = () => {
 
     const { users, admin, logoutUsers } = useAuth();
-    // const [control, setControl] = useState("myOrders")
     let { path, url } = useRouteMatch();
 
     return (
         <Container className="my-5 py-5">
             <Row>
-                <div className="col-md-3 dashboard_item" >
-                    <Link to={`${url}`} className="text-decoration-none text-light fs-4 p-2" >My Orders</Link> <br />
-
-                    <Link to={`${url}/userReview`} className="text-decoration-none text-light fs-4 p-2" >Review</Link> <br />
-
-                    <Link to={`${url}/payments`} className="text-decoration-none text-light fs-4 p-2 m-3" >Pay</Link> <br />
+                <div className="col-md-3 dashboard_item" style={{ textAlign: 'right' }}>
+                    <h3 className="mt-5 pt-5 text-uppercase text-center" style={{ color: '#FFFFFF' }}> Dashboard  </h3>
                     
-                    <Link className="text-decoration-none text-light fs-4 p-2" to="">Profile</Link> <br />
-                    <Link className="text-decoration-none text-light fs-4 p-2" to="">Settings</Link> <br />
-
-                    {/* Admin */}
+                             {/* Admin */}
                     {admin && <div>
-                    <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/`}>AddProduct</Link> <br />
-                    <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/makeAdmin`}>Make Admin</Link> <br />
-                    <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/manageAllOrder`}>ManageAllOrders</Link> <br />
-                    <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/managePrducts`}>Manage Products</Link> <br />
+                        <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}`}>Manage All Orders
+                        <FaRegCalendarAlt className="mx-2" />
+                        </Link> <br />
+                    <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/addProducts`}>AddProduct
+                    <FaRegCalendarPlus className="mx-2" />
+                        </Link> <br />
+                        <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/makeAdmin`}>Make Admin
+                            <FaUserSecret className="mx-2" />
+                        </Link> <br />
+                        
+                        <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/manageProducts`}>Manage Products
+                        <FaWindowRestore className="mx-2" />
+                        </Link> <br />
                     </div>
                     }
 
+                    <Link to={`${url}`}
+                        className="text-decoration-none text-light fs-4 p-2" >
+                          My Orders <FaList className="mx-2" />
+                       </Link> <br />
 
-                    <Link onClick={logoutUsers} className="text-decoration-none fs-4 p-1 bask_btn" to="">Logout</Link>
+                    <Link to={`${url}/userReview`} className="text-decoration-none text-light fs-4 p-2" >
+                    Review  <FaRegEdit className="mx-2" /> </Link> <br />
+
+                    <Link to={`${url}/payments`} className="text-decoration-none text-light fs-4 p-2 m-3" >Pay
+                        <FaDollarSign  />
+                        </Link> <br />
+
+               
+
+                    <Link className="text-decoration-none text-light fs-4 p-2" to="#">Profile
+                    <FaUserAlt className="mx-2" />
+                    </Link> <br />
+                    <Link className="text-decoration-none text-light fs-4 p-2" to="#">Settings
+                    <FaRegSun className="mx-2" />
+                    </Link> <br />
+
+                    <Link onClick={logoutUsers} className="text-decoration-none fs-4 p-1 bask_btn" to="">Logout
+                    <FaSignOutAlt className="mx-2" />
+                    </Link>
                 </div>
                 <div className="col-md-9">
                    
+                        
+                {admin && 
+                        <Switch>
+                        <AdminRoute exact path={`${path}`}> <ManagelAllOrder></ManagelAllOrder> </AdminRoute>
+                        <Route path={`${path}/addProducts`}> <AddBraskets></AddBraskets>  </Route>
+                        <AdminRoute path={`${path}/makeAdmin`}> <MakeAdmin></MakeAdmin> </AdminRoute>     
+                        <AdminRoute exact path={`${path}/manageProducts`}> <ManageProducts></ManageProducts> </AdminRoute>
+                        </Switch>
+                    }
+                
                     { users &&
                         <Switch>
                         <Route exact path={path}> <MyOrder></MyOrder>  </Route>
@@ -58,16 +92,7 @@ const Dashboard = () => {
                         <Route path={`${path}/payments`}> <Payment></Payment> </Route>
                         </Switch>
                     }
-                    
-                    {admin && 
-                        <Switch>
-                        <Route exact path={path}> <AddBraskets></AddBraskets>  </Route>
-                        <AdminRoute path={`${path}/makeAdmin`}> <MakeAdmin></MakeAdmin> </AdminRoute>
-                        <AdminRoute path={`${path}/manageAllOrder`}> <ManagelAllOrder></ManagelAllOrder> </AdminRoute>
-                        <AdminRoute path={`${path}/managePrducts`}> <ManageProducts></ManageProducts> </AdminRoute>
-                        </Switch>
-                    }
-                </div>
+               </div>
             </Row>
         </Container>
     );

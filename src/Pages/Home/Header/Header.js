@@ -54,7 +54,7 @@ const Header = () => {
                             </NavLink>
                                 :
                                 <NavLink to="/register">
-                                <Button className="menu border-0" variant="success">Login</Button>
+                                <Button className="menu border-0" >Login</Button>
                                 </NavLink>
             
                         }

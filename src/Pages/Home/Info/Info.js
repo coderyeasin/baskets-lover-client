@@ -27,9 +27,9 @@ const Info = () => {
                        
                         
 
-                        <Row className="align-items-center mx-auto" style={{textAlign:'justify'}}>
-                            <div className="col-md-6">
-                                <p   className="p-3">Baskets or fabric bins to corral shallow wire storage miscellaneous items such as candles and extra toiletries. with a variety of storage baskets. Large, lidded wicker baskets work well for bulky items such as blankets, sheets, and bath towels. Use shallow wire storage baskets or fabric bins to corral miscellaneous items such as candles and extra toiletries.</p>
+                        <Row className="align-items-center mx-auto" style={{textAlign:''}}>
+                            <div className="col-md-6 px-3">
+                            <p   className="" style={{textAlign:'right'}} >Baskets or fabric bins to corral shallow wire storage miscellaneous items such as candles and extra toiletries. with a variety of storage baskets. Large, lidded wicker baskets work well for bulky items such as blankets, sheets, and bath towels. Use shallow wire storage baskets or fabric bins to corral miscellaneous items such as candles and extra toiletries.</p>
                                 </div>
                                 
                             <div className="col-md-6 mb-3">

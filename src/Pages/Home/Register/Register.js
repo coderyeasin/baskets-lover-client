@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import imag from '../../../images/registration.png'
+ 
 
 const Register = () => {
 
@@ -31,7 +32,7 @@ const Register = () => {
                         <img className="img-fluid" src={imag} alt="" />
                     </div>
                     <div className="col-md-6">
-                    <h3>Please Register</h3>
+                    <h3 style={{color:'#a17154'}} className="mb-3">Please Register</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className="mb-3" type="text" placeholder="Your name" {...register("name", { required: true, maxLength: 80 })} /> <br />
                         
@@ -41,7 +42,7 @@ const Register = () => {
                         
                             <input className="mb-3" type="password" placeholder="re-type Password" {...register("password2", { required: true, maxLength: 100 })} /> <br />
 
-                            <Link style={{ color: '#79593f' }} className="text-decoration-none" to="/login">Already Registered? Please <b className="primary">Click</b> here</Link> <br />
+                            <Link style={{ color: '#79593f' }} className="text-decoration-none" to="/login">Already Registered? Please <b className="">Click</b> here</Link> <br />
                             
                         <input className="my-3 border-0 py-2 bask_btn rounded" type="submit" value="Registration"  />
                     </form>

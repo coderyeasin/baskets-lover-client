@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Container, Row } from 'react-bootstrap';
+import {  Container, Row } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
-import './Banner.css';
 import slide from '../../../images/cover.jpg'
 import first from '../../../images/slider/slider-1.jpg'
 import second from '../../../images/slider/slider-2.jpg'
 import third from '../../../images/slider/slider-3.jpg'
+import './Banner.css';
 
 // import Zoom from 'react-reveal/Zoom';
 import Rotate from 'react-reveal/Rotate';
@@ -21,7 +21,7 @@ const Banner = () => {
                     <div className="col-md-1"></div>
                     <div className="col-md-6">
                         <Row className="align-items-center">
-                        <h2 className="text-center" style={{color:'#fdf2ec', fontSize:'42px'}}>Baskets Makes Lifer Easier</h2>
+                        <h2 className="text-center" style={{color:'#fdf2ec', fontSize:'42px'}}>Baskets Makes Life Easier</h2>
                             <div className="col-md-6">
                                
                                 <Rotate top left>

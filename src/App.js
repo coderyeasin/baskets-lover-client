@@ -15,8 +15,8 @@ import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
 import Payment from './Pages/Dashboard/User/Payment/Payment';
 import MyOrder from './Pages/Dashboard/User/MyOrder/MyOrder';
 import UserReview from './Pages/Dashboard/User/UserReview/UserReview';
-import Testimonal from './Pages/Home/Testimonal/Testimonal';
 import Explore from './Pages/Home/Explore/Explore';
+import NotFound from './Pages/Home/NotFound/NotFound';
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
             <PrivateRoute  path="/payment"> <Payment></Payment> </PrivateRoute>
             <PrivateRoute  path="/myorder"> <MyOrder></MyOrder> </PrivateRoute>
             <PrivateRoute  path="/userreview"> <UserReview></UserReview> </PrivateRoute>
+            <Route  path="*"> <NotFound></NotFound> </Route>
         </Switch>
         <Footer />
       </Router>

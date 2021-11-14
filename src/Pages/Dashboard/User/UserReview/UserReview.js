@@ -1,8 +1,10 @@
 import React from 'react';
-import { Alert, Container, Row } from 'react-bootstrap';
+import {  Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
+import fededbacks from '../../../../images/review.png'
+
 
 const UserReview = () => {
 
@@ -32,20 +34,20 @@ const UserReview = () => {
             <Container>
                 <Row className="my-5 py-5">
                    
-                    <div className="col-md-6"></div>
                     <div className="col-md-6">
-                    <h3>Post Your Feedback</h3>
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                        <img src={fededbacks} className="img-fluid" alt="" />
+                    </div>
+                    <div className="col-md-6">
+                    <h3 style={{ color:'#79593f'}}>Post Your Feedback</h3>
+                            <form onSubmit={handleSubmit(onSubmit)} style={{width:'100%'}}>
     
                                 <input className="mb-3" type="text" placeholder="out of 5" {...register("star", { required: true, maxLength:5 })} /> <br />
                                 
-                                <input className="mb-3 p-5" type="text" placeholder="Please give us valueable feedback" {...register("review", { required: true})} /> <br />
+                                <input className="mb-3 p-lg-5 " type="text" placeholder="Please give us valueable feedback" {...register("review", { required: true})} /> <br />
                                 
                         
-                                <input className="my-3" type="submit" value="Feedback" className="btn btn-success" />
+                                <input className="my-3" type="submit" value="Feedback" className="bask_btn rounded border-0 p-2" />
                             </form>
-                            {/* <p>--------------------------------------------------</p>
-                            <Link to="/login">Already Registered? Please Login here</Link> */}
                         </div>
                 </Row>
             </Container>

@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from 'react-router-dom';
+import useAuth from '../../../../Hooks/useAuth';
 
 
 const MakeAdmin = () => {
     
     const [success, setSuccess] = useState(false)
-
+    // const { token } = useAuth();
     const history = useHistory();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         fetch('https://arcane-peak-16137.herokuapp.com/orders/admin', {
             method: 'PUT',
-            headers:{ 'content-type' : 'application/json' },
+            headers: {
+                // 'authorization' : `Bearer ${token}`,
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(data)
         })
             .then(res => res.json())

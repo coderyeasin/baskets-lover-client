@@ -31,7 +31,7 @@ const AddBraskets = () => {
         <Container>
             <Row>
                 <div className="col-md-6 my-5">
-                    <h3>Please Add a new Product</h3>
+                    <h3>Add a new Product</h3>
                 
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="mb-2" placeholder="product name" {...register("name", { required: true })} /> <br />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationArrow, faPhone, faEnvelope, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FaEnvelope, FaFacebook, FaTwitter, FaYoutube, FaLocationArrow, FaPhone, FaGoogle, FaInstagram, FaCcAmex,FaCcVisa,FaStripe,FaCcMastercard, FaCcDiscover  } from 'react-icons/fa';
 
 
 const Footer = () => {
@@ -17,10 +16,10 @@ const Footer = () => {
                         <h4 className="my-3"> Our Location </h4>
                         <div >
                             
-                            <p > <FontAwesomeIcon icon={faLocationArrow} /> Address: 500 Hennessy Road  <br />
+                            <p > <FaLocationArrow /> Address: 500 Hennessy Road  <br />
                               Causeway Bay, Hong Kong </p> 
-                            <span > <FontAwesomeIcon icon={faPhone} /> +1 23456789  </span> <br />
-                            <span > <FontAwesomeIcon icon={faEnvelope} /> contact@yourdomain.com  </span> <br />
+                            <span > <FaPhone /> +1 23456789  </span> <br />
+                            <span > <FaEnvelope /> contact@yourdomain.com  </span> <br />
                              <br />
                        </div>
                     </div>
@@ -60,19 +59,19 @@ const Footer = () => {
                     <div className="col-md-4 py-3" >
                         <h4 className="my-3"> Follow us </h4>
                         <div >                          
-                            <span > Facebook  <FontAwesomeIcon icon={faCoffee} /> </span> <br />
-                            <span > Google  <FontAwesomeIcon icon={faCoffee} /> </span> <br />
-                            <span > Youtube <FontAwesomeIcon icon={faCoffee} />  </span> <br />
-                            <span > Instagram <FontAwesomeIcon icon={faCoffee} />  </span> <br />
-                            <span >  Twitter <FontAwesomeIcon icon={faCoffee} /> </span> <br />
+                            <span >   <FaGoogle /> Google      </span> <br />
+                            <span >   <FaYoutube /> Youtube      </span> <br />
+                            <span >   <FaInstagram /> Instagram     </span> <br />
+                            <span >   <FaFacebook /> Facebook      </span> <br />
+                            <span >   <FaTwitter /> Twitter      </span> <br />
                              <br />
                        </div>
                     </div>
                     <hr className="w-75 mx-auto" />
                     <div className="d-flex" style={{justifyContent:'space-around'}}>
-                        <p> Copyright @ All rights reserved</p>
+                        <p> Copyrights &copy; All rights reserved</p>
                         <div>
-                        <p>Accept Payments: </p>
+                        <p>Accept Payments: <FaCcAmex /> <FaCcVisa /> <FaStripe /> <FaCcMastercard /> <FaCcDiscover /> </p>
                         </div>
                     </div>
                 </Row>

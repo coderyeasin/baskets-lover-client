@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import imag from '../../../images/registration.png'
+import { FaGoogle, FaFacebook, FaGithub,FaTwitter } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -32,7 +33,7 @@ const Login = () => {
                                 <img className="img-fluid" src={imag} alt="" />
                     </div>
                     <div className="col-md-6">
-                    <h3>Please Login</h3>
+                    <h3 style={{color:'#a17154'}} className="mb-3">Please Login</h3>
             {
                 errors && <Alert variant="danger" onClose={() => setErrors(false)} dismissible>
                 <Alert.Heading>Wrong Email/Password! Please Provide valid info</Alert.Heading>
@@ -51,16 +52,16 @@ const Login = () => {
                 <Link style={{ color: '#79593f' }} className="text-decoration-none" to="/register"> Create A New Account? <b className="primary">Click</b> here</Link> <br />
 
             </form>
-            <p className="text-center my-3 fw-bold">USING SOCIAL MEDIA</p>
+            <p className="text-center my-3 fw-bold" style={{color:'#a17154'}}>USING SOCIAL MEDIA</p>
                 
             <ButtonGroup>
-            <Button onClick={() => loginWithGoogle(location, history)} className="bask_btn border-0">Google</Button>
+            <Button onClick={() => loginWithGoogle(location, history)} className="bask_btn border-0"> <FaGoogle /> Google</Button>
             
-                <Button  className="bask_btn border-0">Facebook</Button>
+                <Button  className="bask_btn border-0"> <FaFacebook /> Facebook</Button>
                 
-                <Button className="bask_btn border-0">Github</Button>
+                <Button className="bask_btn border-0"> <FaGithub /> Github</Button>
                 
-            <Button className="bask_btn border-0">Twitter</Button>
+            <Button className="bask_btn border-0"> <FaTwitter /> Twitter</Button>
 
            </ButtonGroup>
                     </div>

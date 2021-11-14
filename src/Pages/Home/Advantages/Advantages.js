@@ -2,11 +2,13 @@ import React from 'react';
 import { Card, Container, Row } from 'react-bootstrap';
 import Rotate from 'react-reveal/Rotate';
 
+
+
 const Advantages = () => {
     return (
         <div style={{background:'#fdf2ec'}}>
-            <Container className="my-5 py-3">
-                <h3 className="text-center fs-1 mb-3 text-uppercase" style={{color:'#a17154'}}>Bask Advantages </h3>
+            <Container className="my-5 py-5">
+                <h3 className="text-center fs-1 mb-5 text-uppercase" style={{color:'#a17154'}}>Bask Advantages </h3>
                 <Row className="align-items-center">
                     <div className="col-md-7">
                     <Rotate top left>
@@ -20,8 +22,7 @@ const Advantages = () => {
                         </Card.Body>
                         </Card>
 
-                    <Card className="mb-3 border-0 shadow text-light" style={{ borderRadius:'20px', background:'#a17154' }}>
-                        
+                    <Card className="mb-3 border-0 shadow text-light" style={{ borderRadius:'20px', background:'#a17154' }}>                                
                         <Card.Body>
                             <Card.Title>Flexible</Card.Title>
                             <Card.Text>
@@ -33,20 +34,23 @@ const Advantages = () => {
                     </div>
                     <div className="col-md-5">
                     <Rotate top right>
-                        <Card className="mb-3 border-0 shadow text-light" style={{ borderRadius:'20px', background:'#a17154' }}>
-                        
+                        <Card className="mb-3 border-0 shadow text-light" style={{ 
+                                borderRadius: '20px', background: '#a17154'
+                            }}>
+
                         <Card.Body>
-                            <Card.Title>Our Facilities</Card.Title>
-                            <Card.Text className="list-unstyled">
-                            <li> Free Delivery </li>
-                            <li> No Hidden Charge</li>
-                            <li> Resistant</li>
-                            <li> Easy care</li>
-                            <li> Light but strong</li>
-                            <li> Affordable</li>
-                            <li> Artistic matting</li>
-                            <li> Multi Functional</li>
-                            <li> Unique Baskets</li>
+                            <Card.Title className="fs-3 pt-3">Ensure Qualities</Card.Title>
+                                    <Card.Text className="list-unstyled">
+                                        <p >We're looking at first customer satisfaction</p>
+                                        
+                            <li> INTRICATE, HAND-WOVEN DESIGNS </li>
+                            <li>  STRONG AND DURABLE CONSTRUCTION</li>
+                            <li>FUNCTIONAL DESIGN COMBINED WITH BEAUTY</li>
+                            <li> REMOVABLE, WASHABLE LINERS</li>
+                            <li> STURDY POLE OR WOOD HANDLES</li>
+                            <li> BEAUTIFUL DECORATIVE ACCENTS</li>
+                            <li> 100% HIGHER-GRADE RATTAN</li>
+
                             </Card.Text>
                         </Card.Body>
                         </Card>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Accordion, Container, Modal, Row, Button, Alert } from 'react-bootstrap';
+import { Accordion, Container, Modal, Row, Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../Hooks/useAuth';
 import Rotate from 'react-reveal/Rotate';
-
+import './Purchase.css';
         
 const Purchase = () => {
 
@@ -35,6 +35,8 @@ const Purchase = () => {
 //react-hook
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
+        data.status = "pending";
+        
         fetch('https://arcane-peak-16137.herokuapp.com/orders', {
             method: 'POST',
             headers:{ 'content-type' : 'application/json' },
@@ -58,11 +60,8 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
     return (
         <div>
             <Container className="my-5 py-5">
-                <h3 className="text-center text-uppercase"> GEt your Awesome Baskets Now!!! </h3>
-                {show&& <Alert variant="success">
-                    <p>Congrasulations! your order receive Successfully</p>
-                </Alert>
-                }
+                <h3 className="text-center text-uppercase" style={{ color:'#79593f'}}> GEt your Awesome Baskets Now!!! </h3>
+
                 <Row className="align-items-center">
                     <div className="col-md-8">                       
                         <Rotate left>
@@ -70,7 +69,7 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                         </Rotate>
                     </div>
                     <div className="col-md-4" style={{ textAlign: 'left', paddingTop: '20px' }}>
-                        <p className="text-center"> <strong>Order ID: #{orderId} </strong> </p>
+                        <p className="text-center" style={{ color:'#79593f'}}> <strong>Order ID: #{orderId} </strong> </p>
                     {/* Modal */}
 
                     <Button className="bask_btn border-0 p-2 fs-6 rounded-pill shadow text-uppercase" onClick={() => setShow(true)}>
@@ -78,6 +77,7 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                         </Button>
 
                         <Modal
+                                
                                 show={show}
                                 onHide={() => setShow(false)}
                                 dialogClassName="modal-90w"
@@ -88,7 +88,7 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                                     <p >{collect?.name}</p>
                                 </Modal.Title>
                                 </Modal.Header>
-                                <Modal.Body className="mx-auto w-75">
+                                <Modal.Body className="mx-auto w-75" >
                     <form onSubmit={handleSubmit(onSubmit)}>
                                     <input className="mb-2 rounded-pill border-success ps-2" placeholder="Order ID" {...register("id")} />
 
@@ -98,9 +98,9 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
 
                                 <input className="mb-2 rounded-pill border-success ps-2" defaultValue={users?.email} {...register("email")} />
 
-                                <input className="mb-2 rounded-pill border-success ps-2" placeholder="phone" {...register("phone")} />
+                                <input className="mb-2 rounded-pill border-success ps-2" placeholder="Phone" {...register("phone")} />
 
-                                <input className="mb-2 rounded-pill border-success ps-2" placeholder="address" {...register("address")} /> <br />
+                                <input className="mb-2 rounded-pill border-success ps-2" placeholder="Give your address" {...register("address")} /> <br />
                                         
                                 {errors.exampleRequired && <span>This field is required</span>}
                                 
@@ -111,16 +111,14 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                     </Modal>
                                         
 
-                        {/* Description */}
                         
                         <h4 className="mt-3">Name: {collect?.name} </h4>
                         <p className="mb-3">Price: ${collect?.price} </p>
                         
-                        {/* detials */}
 
-                        <Accordion defaultActiveKey="0" className="my-3">
+                        <Accordion style={{border:'1px solid #79593f'}} defaultActiveKey="0" className="my-3">
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>Details</Accordion.Header>
+                                <Accordion.Header ><h3 style={{ color:'#79593f'}} > Details</h3></Accordion.Header>
                             <Accordion.Body>
                             <p>{collect?.description} </p>
                                  <li>   Soft-sided, two-toned rope basket </li>
@@ -128,7 +126,7 @@ let orderId = Math.floor(1000 + Math.random() * 9000);
                                   <li>  Polypropylene with leather handles</li>
                                    <li> Spot clean only</li>
                                   <li>  All ages</li>
-                                   <li> Made in Vietnam </li>
+                                   <li> Made in Bangladesh </li>
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">

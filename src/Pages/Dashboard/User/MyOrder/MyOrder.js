@@ -37,7 +37,7 @@ const MyOrder = () => {
         <div>
             <Container>
                 <Row className="my-5 py-5">
-                    <h3>User orders {orders?.length} </h3>
+                    <h3>My Orders : {orders?.length} </h3>
                     {
                         orders?.map(order => <div className="col-md-4 g-4" key={order?._id}> <Card>
                         <Button onClick={()=> handleOrder(order?._id)} className="w-25 ms-auto bg-danger border-0">X</Button>
