@@ -3,6 +3,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import Table from 'react-bootstrap/Table'
 import {Button} from 'react-bootstrap/'
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router';
 
 
 const ManagelAllOrder = () => {
@@ -10,17 +11,18 @@ const ManagelAllOrder = () => {
     const { users } = useAuth();
     const [orders, setOrders] = useState([]);
 
-    const [status, setStatus] = useState("")
+    // const [status, setStatus] = useState("")
 
     useEffect(() => {
         const url = `https://arcane-peak-16137.herokuapp.com/allorders?email=${users?.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [users?.email])
 
     const usersOrder = orders.filter(items => items?.id && items?.serviceName)
-    
+    const history = useHistory();
+
     const handleOrder = id => {
         const process = window.confirm('Are you sure?')
         if (process) {
@@ -39,28 +41,33 @@ const ManagelAllOrder = () => {
         }
     }
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
-        
-        console.log(data);
-    };
+    const { register, handleSubmit, reset } = useForm();    
 
-    const handleUpdate = (id) => {
-        fetch(`https://arcane-peak-16137.herokuapp.com/updateStatus/${id}`, {
+    const onSubmit = data => {
+        const url=`https://arcane-peak-16137.herokuapp.com/updateStatus/${data}`
+        fetch(url, {
             method: 'PUT',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(orders)
         })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setStatus(data)
-        //         console.log(data);
-        // })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
 
+                    setOrders(data)
+                    history.push('/dashboard')
+                    // console.log(data);
+                }
+
+        })
     }
-    
+
+
+
+
+
 
     return (
         <div>
@@ -87,21 +94,22 @@ const ManagelAllOrder = () => {
                             <td>{order?.phone}</td>
                             <td>
                                 
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                            <form onSubmit={() => handleSubmit(onSubmit(order?._id))}>
                                 <select {...register("status")}>
-                                    <option value="pending"> {order?.status} </option>
+                                    <option value="pending"> {order?.status || "Updated"} </option>
                                     <option value="approved">Approved</option>
-                                    {/* <option value="hold">Hold</option> */}
-                                </select>
-                                <input onClick={()=> handleUpdate(order?._id)} className="my-3" type="submit" />
+    
+                                    </select> <br />
+                                   
+                                <input type="submit" value="update" className=" my-3 btn btn-success" />
                                 </form>
 
                         </td>
-                            <td>
+                            {/* <td>
                                 <Button  variant="success">Edit</Button>
-                            </td>
+                            </td> */}
                             <td>
-                                <Button onClick={()=> handleOrder(order?._id)}  variant="Danger">X</Button>
+                                <Button onClick={()=> handleOrder(order?._id)}  variant="danger">X</Button>
                             </td>
                         </tr>
                     </tbody>

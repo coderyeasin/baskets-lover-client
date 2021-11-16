@@ -1,10 +1,9 @@
 import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { Container, Button } from 'react-bootstrap';
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../../images/logo.png'
 import './Header.css'
 import { HashLink } from 'react-router-hash-link';

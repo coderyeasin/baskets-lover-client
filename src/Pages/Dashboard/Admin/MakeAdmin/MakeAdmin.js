@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { Link, useHistory } from 'react-router-dom';
-import useAuth from '../../../../Hooks/useAuth';
+import { useHistory } from 'react-router-dom';
+
 
 
 const MakeAdmin = () => {
@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false)
     // const { token } = useAuth();
     const history = useHistory();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         fetch('https://arcane-peak-16137.herokuapp.com/orders/admin', {

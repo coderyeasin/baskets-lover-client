@@ -31,8 +31,8 @@ const Dashboard = () => {
                     <h3 className="mt-5 pt-5 text-uppercase text-center" style={{ color: '#FFFFFF' }}> Dashboard  </h3>
                     
                              {/* Admin */}
-                    {admin && <div>
-                        <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}`}>Manage All Orders
+                    {admin ? <div>
+                        <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/manageAllOrder`}>Manage All Orders
                         <FaRegCalendarAlt className="mx-2" />
                         </Link> <br />
                     <Link className="text-decoration-none text-light fs-4 p-2" to={`${url}/addProducts`}>AddProduct
@@ -46,28 +46,32 @@ const Dashboard = () => {
                         <FaWindowRestore className="mx-2" />
                         </Link> <br />
                     </div>
-                    }
+                    
 
-                    <Link to={`${url}`}
-                        className="text-decoration-none text-light fs-4 p-2" >
-                          My Orders <FaList className="mx-2" />
-                       </Link> <br />
-
-                    <Link to={`${url}/userReview`} className="text-decoration-none text-light fs-4 p-2" >
-                    Review  <FaRegEdit className="mx-2" /> </Link> <br />
-
-                    <Link to={`${url}/payments`} className="text-decoration-none text-light fs-4 p-2 m-3" >Pay
-                        <FaDollarSign  />
+                    :
+                        <div>
+                                <Link to={`${url}/userOrder`}
+                            className="text-decoration-none text-light fs-4 p-2" >
+                            My Orders <FaList className="mx-2" />
                         </Link> <br />
 
-               
+                        <Link to={`${url}/userReview`} className="text-decoration-none text-light fs-4 p-2" >
+                        Review  <FaRegEdit className="mx-2" /> </Link> <br />
 
-                    <Link className="text-decoration-none text-light fs-4 p-2" to="#">Profile
-                    <FaUserAlt className="mx-2" />
-                    </Link> <br />
-                    <Link className="text-decoration-none text-light fs-4 p-2" to="#">Settings
-                    <FaRegSun className="mx-2" />
-                    </Link> <br />
+                        <Link to={`${url}/payments`} className="text-decoration-none text-light fs-4 p-2 m-3" >Pay
+                            <FaDollarSign  />
+                            </Link> <br />
+
+                
+
+                        <Link className="text-decoration-none text-light fs-4 p-2" to="#">Profile
+                        <FaUserAlt className="mx-2" />
+                        </Link> <br />
+                        <Link className="text-decoration-none text-light fs-4 p-2" to="#">Settings
+                        <FaRegSun className="mx-2" />
+                        </Link> <br />
+                    </div>
+                   }
 
                     <Link onClick={logoutUsers} className="text-decoration-none fs-4 p-1 bask_btn" to="">Logout
                     <FaSignOutAlt className="mx-2" />
@@ -75,10 +79,11 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9">
                    
-                        
+                    <h3 className="my-5"> Welcome Mr. {users?.displayName} <br />
+                        <FaUserSecret className="display-3" style={{color:'#a17154'}} /></h3>
                 {admin && 
                         <Switch>
-                        <AdminRoute exact path={`${path}`}> <ManagelAllOrder></ManagelAllOrder> </AdminRoute>
+                        <AdminRoute exact path={`${path}/manageAllOrder`}> <ManagelAllOrder></ManagelAllOrder> </AdminRoute>
                         <Route path={`${path}/addProducts`}> <AddBraskets></AddBraskets>  </Route>
                         <AdminRoute path={`${path}/makeAdmin`}> <MakeAdmin></MakeAdmin> </AdminRoute>     
                         <AdminRoute exact path={`${path}/manageProducts`}> <ManageProducts></ManageProducts> </AdminRoute>
@@ -87,7 +92,7 @@ const Dashboard = () => {
                 
                     { users &&
                         <Switch>
-                        <Route exact path={path}> <MyOrder></MyOrder>  </Route>
+                        <Route exact path={`${path}/userOrder`}> <MyOrder></MyOrder>  </Route>
                         <Route path={`${path}/userReview`}> <UserReview></UserReview> </Route>
                         <Route path={`${path}/payments`}> <Payment></Payment> </Route>
                         </Switch>

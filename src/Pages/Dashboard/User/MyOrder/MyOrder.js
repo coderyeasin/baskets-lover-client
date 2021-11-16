@@ -12,7 +12,7 @@ const MyOrder = () => {
         fetch(url)
             .then(res => res.json())
         .then(data => setOrders(data))
-    },[])
+    },[users?.email])
 
     const handleOrder = id => {
         const process = window.confirm('Are you sure?')
@@ -37,7 +37,7 @@ const MyOrder = () => {
         <div>
             <Container>
                 <Row className="my-5 py-5">
-                    <h3>My Orders : {orders?.length} </h3>
+                    <h3 style={{color:'#a17154'}}>My Orders : {orders?.length} </h3>
                     {
                         orders?.map(order => <div className="col-md-4 g-4" key={order?._id}> <Card>
                         <Button onClick={()=> handleOrder(order?._id)} className="w-25 ms-auto bg-danger border-0">X</Button>
@@ -45,6 +45,7 @@ const MyOrder = () => {
                             <Card.Title>{order?.name}</Card.Title>
                                 <Card.Text>
                                     <p>Order no. #{order?.id}</p>
+                                    <p className="text-danger">{order?.status || <span className="text-success">Approved</span>}</p>
                                     <p>Product Name: {order?.serviceName}</p>
                                     <p>Your Phone: {order?.phone}</p>
                                     <p>Your Address: {order?.address}</p>

@@ -13,7 +13,6 @@ const Purchase = () => {
 
     const [order, setOrder] = useState([])
     const [collect, setCollect] = useState({})
-    const [itemId, setItem] = useState(false)
     const [show, setShow] = useState(false);
 
     const history = useHistory()
@@ -27,13 +26,13 @@ const Purchase = () => {
     useEffect(() => {
         const places = order.find(e => e._id === id)
         setCollect(places)
-    },[order])
+    },[order, id])
 
 
 
     
 //react-hook
-    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.status = "pending";
         

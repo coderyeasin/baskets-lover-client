@@ -2,15 +2,13 @@ import React from 'react';
 import {  Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
-import useAuth from '../../../../Hooks/useAuth';
 import fededbacks from '../../../../images/review.png'
 
 
 const UserReview = () => {
 
-    const { users } = useAuth();
     const history = useHistory()
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {    
         fetch('https://arcane-peak-16137.herokuapp.com/orders', {
